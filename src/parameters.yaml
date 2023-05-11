@@ -1,0 +1,46 @@
+# id of the links that are digits
+digit_link_id: [13, 19]
+
+pybullet_camera:
+  cameraDistance: 0.4
+  cameraYaw: 45.
+  cameraPitch: -45.
+  cameraTargetPosition: [0, 0, 0]
+
+tacto:
+  width: 120
+  height: 160
+  visualize_gui: True
+
+object_control_panel:
+  slider_params:
+    position_low: [-0.3, -0.3, 0]
+    position_high: [0.3, 0.3, 0.3]
+
+# Neccesary parameters of the target object;
+# The global scaling is used to shrink the size of the object
+target_object:
+  # object_name options:
+  # Baseline: "block" only
+  # MLP old dataset: ["block1", "block2", "block3", "cylinder1", "cylinder2", "cylinder_3", "bottle1", "bottle2", "bottle3"]
+  object_name: block
+  object_position: [0, 0, 0.25]
+  global_scaling : 1.0
+
+simulation:
+  camera_pos : [0.5, 1, 0.7]
+  camera_pos_2 : [1.5, -1, 0.7]
+
+  pitch : -20.0
+  yaw : 0
+  roll : 0
+  fov : 30
+
+# Parameters for data collection
+data_collection:
+  poses_count: 10
+
+# Parameters to adjust for robot
+robot:
+  z_padding: 0.2        # Prevents the robot from colliding with the object when moving to it
+  velocity_scale: 0.15    # Scales the robot's speed in simulation

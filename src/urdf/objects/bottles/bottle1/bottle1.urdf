@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<robot name="mustard_bottle">
+  <link name="baseLink">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+	    <mesh filename="poisson/textured.obj" scale="0.6 0.8 0.8"/>
+      </geometry>
+       <material name="purple">
+        <color rgba="1.0 1.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz= "0 0 0"/>
+      <geometry>
+	    <mesh filename="poisson/textured.obj" scale="0.6 0.8 0.8"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
