@@ -1,0 +1,56 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Robust Robotic Grasping Utilising Touch Sensing}
+\author{Justin Koo\\Supervisors: Prof. Marc Deisenroth, Yasemin Bekiroglu\\ \\Interim Report}
+\date{January 2023}
+
+\begin{document}
+\maketitle
+
+\section{Progress made to date}
+This section documents the original work plan from the project proposal and current progress of the project. Since the submission of the project proposal, a better understanding of the robotics field and expectations of the project was established, leading to minor objective changes. These updates will be addressed in Section 1.2.
+
+\subsection{Original project objectives}
+The follow objectives are expected to be completely achieved by the end of the project:
+\begin{enumerate}
+    \item Set up a simulation environment, e.g. PyBullet or NVIDIA Isaac. 
+    \item Collect sensory data (visual and force/torque readings) via the simulator.
+    \item Apply basic simulation functionalities: position control and vision sensing.
+    \item Implement and test baseline.
+    \item Build the learning framework:
+    \begin{enumerate}
+        \item Learning grasps based on Bayesian Optimization, from a chosen scene representations such as signed distance function 
+        \item Picking with two fingers given object model (primitive shapes such as box, sphere, cylinder) and pose, all learned by trial and error
+    \end{enumerate}
+\end{enumerate}
+
+The following are additional objectives for the project, provided there is sufficient time remaining to work on them:
+\begin{enumerate}
+    \item Quickly adapt to new object shapes based on prior trials with other shapes.
+    \item Add simple touch feedback in simulation.
+    \item Include task constraints: e.g. moving a cup or keeping the cup upright.
+\end{enumerate}
+
+\subsection{Improvised project objectives}
+An additional objective was added to the list of project objectives since the Project Plan was submitted: conduct a survey on research methods for robust robotic grasping. The survey should be backed by several academic papers on grasping approaches, and findings on grasping methods should be categorized by data input, grasping method (touch, vision, or touch \& vision), and the problems these papers addressed.
+
+\subsection{Current progress}
+As of January 14, 2023:
+\begin{itemize}
+    \item Objectives 1, 3 and 6 are completely achieved
+    \item Objective 2 is partially achieved for collection of tactile data via DIGIT tactile sensors. Any remaining data that needs to be collected should be done so before Academic Week 22 (23rd January - 29th January).
+\end{itemize}
+
+\section{Remaining work to be done before the final report deadline}
+Term 2 will be dedicated to developing and testing grasping approaches. More specifically, completing objectives 4 and 5. If sufficient time remains after achieving said objectives, optional objectives listed in the Project Plan can be implemented as well.
+\end{document}

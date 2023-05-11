@@ -1,0 +1,132 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[english]{babel}
+
+% Set page size and margins
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Robust Robotic Grasping Utilising Touch Sensing}
+\author{Justin Koo\\Supervisors: Prof. Marc Deisenroth, Yasemin Bekiroglu\\ \\Project Plan}
+\date{November 2022}
+
+\begin{document}
+\maketitle
+
+\section{Abstract}
+Robotic grasping and object manipulation have been studied for decades. There is yet to exist a robust system which can grasp any type of object with human-level precision.
+
+\noindent\newline
+Many different approaches have been proposed with varying assumptions regarding the available information about the scene and the type of objects in question (known, unknown, familiar). These approaches range from designing simplifying hand models, to completely end-to-end systems inferring grasp parameters from raw data. However, there are still problems in the field in terms of, for example, dealing with uncertainties in sensing and actuation, scalability and adding constraints in terms of task.
+
+
+\section{Aims and Objectives}
+\subsection{Aims}
+This project will focus on building a robust robotic system that can learn to pick up an object with simple geometry using a two-finger and a three-finger hand. The project will take a learning-based approach to grasping through, for example, Bayesian optimization \cite{nogueria, frazier}. The learning-based approach should be compared with a baseline approach from the related literature (e.g. \cite{nogueria, danielczuk, breyer}) for evaluation. 
+
+\subsection{Objectives}
+\begin{enumerate}
+    \item Set up a simulation environment, e.g. PyBullet or NVIDIA Isaac. 
+    \item Collect sensory data (e.g. visual and force/torque readings) via the simulator.
+    \item Apply basic simulation functionalities: position control and vision sensing.
+    \item Implement and test baseline (e.g. \cite{breyer}, and a basic approach such as executing predefined grasps per object model given object pose).
+    \item Build the learning framework:
+    \begin{enumerate}
+        \item Learning grasps based on Bayesian Optimization, from a chosen scene representations such as signed distance function 
+        \item Picking with two fingers given object model (primitive shapes such as box, sphere, cylinder) and pose, all learned by trial and error
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Additional Objectives}
+These are additional objectives depending on the progress of the project:
+\begin{enumerate}
+    \item Quickly adapt to new object shapes based on prior trials with other shapes.
+    \item Add simple touch feedback in simulation (e.g. \cite{bekiroglu}).
+    \item Include task constraints: e.g. moving a cup or keeping the cup upright.
+\end{enumerate}
+
+
+\section{Project Outcomes and Deliverables}
+Ideally, the project will present a learned framework on data-driven grasping. This may be a completely new-developed model or algorithm that attempts to meet the project's underlying problem. In addition, supporting documents for the project will include:
+\begin{enumerate}
+    \item \textbf{Learned framework for grasping}: Ideally, the project will present a learned framework on data-driven grasping. This may be a completely new-developed model or algorithm that attempts to meet the project's underlying problem.
+    \item \textbf{Design specification}: Depending on the final project, the specification may include:
+    \begin{enumerate}
+        \item Documentation on datasets and sources
+        \item System-context and data-flow diagrams
+        \item An evaluation strategy of the model
+    \end{enumerate}
+    \item \textbf{Software}: A fully functional piece of software reading for testing.
+\end{enumerate}
+
+\section{Work Plan}
+\begin{enumerate}
+    \item\textbf{Project start - late October (4 weeks)}: Understanding project objectives and motivation, background research and enroll in robotics courses.
+    \item\textbf{Early November (1 week)}: Collect and analyse data from tactile sensors and set up simulator for sensory data collection.
+    \item\textbf{Early November - Mid November (1-2 weeks)}: Collect sensory data via the simulator.
+    \item\textbf{Mid November - Early December (3 weeks)}: Apply basic simulation functionalities.
+    \item\textbf{Early December - Late December (2 weeks)}: Implement and test baseline.
+    \item\textbf{Late December - Mid February (8-9 weeks)}: Build the learning framework:
+    \begin{enumerate}
+        \item Apply Baysian Optimization for learning grasps with a specific scene representation.
+        \item Unsupervised learning for picking objects with 2 fingers using a given object model.
+        \item (Additional) Adapt to new object shapes based on prior tests with other objects.
+        \item (Additional) Add simple touch feedback in simulation.
+        \item (Additional) Introduce constraints to improve flexibility of the framework.
+    \end{enumerate}
+    \item\textbf{Early February}: Prepare interim report.
+    \item\textbf{Mid February - Late February}: Framework evaluation and fine tuning.
+    \item\textbf{Late February - Late March}: Prepare final report.
+\end{enumerate}
+
+\section{Ethics Statement}
+This project only collects data from tactile sensors, e.g. pressure readings. The project does not involve:
+\begin{enumerate}
+    \item any form of study or data collection with people or animals;
+    \item any data that can be used to identify people;
+    \item any potential moral implications from the results of the project.
+\end{enumerate}
+
+
+\begin{thebibliography}{9}
+
+\bibitem{haarnoja}
+    Haarnoja, T., Zhou, A., Abbeel, P. & Levine, S..
+    \textit{Soft Actor-CriticL Off-Policy Maximum Entroy Deep Reinforcement Learning with a Stochastic Actor, \href{https://arxiv.org/abs/1801.01290}{https://arxiv.org/abs/1801.01290}},
+    ICML,
+    2018roboti
+
+\bibitem{nogueria}
+    Nogueria et al,
+    \textit{Unscented Bayesian Optimization for Safe Robot Grasping},
+    IROS,
+    2016
+
+\bibitem{danielczuk}
+    Danielczuk et al,
+    \textit{Exploratory Grasping: Asymptotically Optimal Algorithms for Grasping Challenging Polyhedral Objects},
+    2020
+
+\bibitem{bekiroglu}
+    Bekiroglu et al,
+    \textit{Assessing Grasp Stability from Haptic Data},
+    IEEE TRO,
+    2011
+
+\bibitem{frazier}
+    Frazier,
+    \textit{A Tutorial on Bayesian Optimization},
+    2018
+
+\bibitem{breyer}
+    Breyer,
+    \textit{\href{https://github.com/ethz-asl/vgn}{https://github.com/ethz-asl/vgn}}
+    CORL,
+    2020
+    
+\end{thebibliography}
+\end{document}
